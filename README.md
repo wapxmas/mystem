@@ -1,2 +1,2 @@
 # mystem
-Bindings for Mystem morphological analyzer executabe
+Bindings for [Mystem](https://tech.yandex.ru/mystem/) morphological analyzer executabe.
