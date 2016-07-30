@@ -20,7 +20,7 @@ main = do
 булок{булка=S,f,inan=gen,pl}
 ```
 ### lib types:
-#### on Windows you need to change console codepage to utf8 with "chcp 65001"
+#### on Windows you need to change console codepage to utf8 with `chcp 65001`
 ```
 Съешь
 съедать
