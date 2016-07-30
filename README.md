@@ -9,7 +9,7 @@ main = do
   forM_ res printMSRes -- sample output
 ```
 
-## mystem / lib types output comparation
+## mystem / (lib types) output comparation
 ### mystem:
 ```
 Съешь{съедать=V=(inpraes,sg,indic,2p,pf|sg,imper,2p,pf)}
