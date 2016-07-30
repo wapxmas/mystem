@@ -19,7 +19,7 @@ main = do
 французских{французский=A=(abl,pl,plen|acc,pl,plen,anim|gen,pl,plen)}
 булок{булка=S,f,inan=gen,pl}
 ```
-### lib types
+### lib types:
 ```
 Съешь
 съедать
