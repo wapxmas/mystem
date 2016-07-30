@@ -18,6 +18,7 @@ library
   exposed-modules:     Mystem.Types
                      , Mystem.Parser
                      , Mystem.IO
+                     , Mystem
   build-depends:       base >= 4.7 && < 5
                      , text >= 1.2 && < 1.4
                      , data-default >= 0.5 && < 0.7
