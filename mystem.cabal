@@ -1,6 +1,6 @@
 name:                mystem
 version:             0.1.0.0
-synopsis:            Initial project template from stack
+synopsis:            Bindings for Mystem morphological analyzer executabe
 description:         Please see README.md
 homepage:            https://github.com/wapxmas/mystem#readme
 license:             MIT
