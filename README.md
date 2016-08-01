@@ -3,6 +3,10 @@ A Haskell bindings for [Mystem](https://tech.yandex.ru/mystem/) morphological an
 
 # Usage
 ```haskell
+import NLP.Mystem.IO
+import qualified Data.Text as T
+import Control.Monad (forM_)
+
 main :: IO ()
 main = do
   res <- getStems $ T.words "Съешь ещё этих мягких французских булок"
