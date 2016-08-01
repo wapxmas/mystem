@@ -1,5 +1,5 @@
 # mystem library
-Bindings for [Mystem](https://tech.yandex.ru/mystem/) morphological analyzer executabe.
+A Haskell bindings for [Mystem](https://tech.yandex.ru/mystem/) morphological analyzer executabe.
 
 # Usage
 ```haskell
