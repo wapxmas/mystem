@@ -15,10 +15,10 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Mystem.Types
-                     , Mystem.Parser
-                     , Mystem.IO
-                     , Mystem
+  exposed-modules:     NLP.Mystem.Types
+                     , NLP.Mystem.Parser
+                     , NLP.Mystem.IO
+                     , NLP.Mystem
   build-depends:       base >= 4.7 && < 5
                      , text >= 1.2 && < 1.4
                      , data-default >= 0.5 && < 0.7

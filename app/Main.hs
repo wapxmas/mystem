@@ -2,7 +2,7 @@
 
 module Main where
 
-import Mystem.IO
+import NLP.Mystem.IO
 import qualified Data.Text as T
 import Control.Monad (forM_)
 

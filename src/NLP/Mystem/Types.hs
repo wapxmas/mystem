@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Mystem.Types where
+module NLP.Mystem.Types where
 
   import           Control.Monad (forM_)
   import qualified Data.Char     as C

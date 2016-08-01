@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Mystem.Parser where
+module NLP.Mystem.Parser where
 
   import           Control.Applicative
   import           Control.Monad
@@ -9,7 +9,7 @@ module Mystem.Parser where
   import           Data.Default
   import qualified Data.Text            as T
 
-  import           Mystem.Types
+  import           NLP.Mystem.Types
 
   parserMystems :: P.Parser [MSRes]
   parserMystems = P.sepBy parserMystem P.endOfLine

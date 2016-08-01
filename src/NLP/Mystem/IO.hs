@@ -1,6 +1,6 @@
 {-# LANGUAGE CPP #-}
 
-module Mystem.IO where
+module NLP.Mystem.IO where
 
   import qualified Data.Attoparsec.Text as P
   import qualified Data.Text            as T
@@ -11,8 +11,8 @@ module Mystem.IO where
   import           System.Process
   import           Text.Printf
 
-  import qualified Mystem.Parser        as MP
-  import           Mystem.Types
+  import qualified NLP.Mystem.Parser        as MP
+  import           NLP.Mystem.Types
 
   printMSRes :: MSRes -> IO ()
   printMSRes (MSRes sw rw) = do
