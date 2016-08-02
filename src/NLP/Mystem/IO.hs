@@ -49,10 +49,12 @@ module NLP.Mystem.IO where
       then error $ printf "Mystem executable %s doesn`t exists." mystemExecutabe
       else do
         (i, o, _, ph) <- createProcess (proc mystemExecutabe mystemParams) { std_in = CreatePipe, std_out = CreatePipe }
-        res <- flip (maybe (return T.empty)) i $ \hIn -> do
-                  hSetEncoding hIn utf8
-                  hSetBuffering hIn NoBuffering
-                  TIO.hPutStrLn hIn $ T.unlines stemWords
-                  maybe (return T.empty) TIO.hGetContents o
+        res <- flip (maybe (return T.empty)) i $ \hIn ->
+                  flip (maybe (return T.empty)) o $ \hOut -> do
+                    hSetEncoding hIn utf8
+                    hSetBuffering hIn NoBuffering
+                    hSetEncoding hOut utf8
+                    TIO.hPutStrLn hIn $ T.unlines stemWords
+                    TIO.hGetContents hOut
         void $ waitForProcess ph
         return res
