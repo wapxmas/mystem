@@ -81,6 +81,10 @@ module NLP.Mystem.Types where
   isFamname (MSRes _ (RWord _ _ (Just (Grams _ _ _ _ _ _ _ _ _ _ _ _ (OG (Just FAMN)))) _ : _)) = True
   isFamname _ = False
 
+  isPern :: MSRes -> Bool
+  isPern (MSRes _ (RWord _ _ (Just (Grams _ _ _ _ _ _ _ _ _ _ _ _ (OG (Just PERSN)))) _ : _)) = True
+  isPern _ = False
+
   isNoun :: MSRes -> Bool
   isNoun (MSRes _ (RWord _ (Pos (Just S)) _ _ : _)) = True
   isNoun _ = False
