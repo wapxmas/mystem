@@ -13,56 +13,56 @@ module NLP.Mystem.Types where
   type SWord = WordT
   type RWords = [RWord]
 
-  data MSRes = MSRes SWord RWords deriving Show
+  data MSRes = MSRes SWord RWords deriving (Eq, Show)
 
-  data RWord = RWord { rword :: WordT, pos :: Pos, grams :: Maybe Grams, cases :: [Grams] } deriving Show
+  data RWord = RWord { rword :: WordT, pos :: Pos, grams :: Maybe Grams, cases :: [Grams] } deriving (Eq, Show)
 
-  data Grams = Grams VerbsTime Case Spf RIVerb FAdj DComp PVerb GG VAspect APVoice IAN TIVerb OG deriving Show
+  data Grams = Grams VerbsTime Case Spf RIVerb FAdj DComp PVerb GG VAspect APVoice IAN TIVerb OG deriving (Eq, Show)
 
-  newtype Pos = Pos (Maybe PosValue) deriving Show
+  newtype Pos = Pos (Maybe PosValue) deriving (Eq, Show)
   data PosValue = A | ADV | ADVPRO | ANUM | APRO | COM | CONJ |
-    INTJ | NUM | PART | PR | S | SPRO | V deriving (Show, Read)
+    INTJ | NUM | PART | PR | S | SPRO | V deriving (Eq, Show, Read)
 
-  newtype VerbsTime = VerbsTime (Maybe VerbsTimeValue) deriving Show
-  data VerbsTimeValue = PRAES | INPRAES | PRAET deriving (Show, Read)
+  newtype VerbsTime = VerbsTime (Maybe VerbsTimeValue) deriving (Eq, Show)
+  data VerbsTimeValue = PRAES | INPRAES | PRAET deriving (Eq, Show, Read)
 
-  newtype Case = Case (Maybe CaseValue) deriving Show
+  newtype Case = Case (Maybe CaseValue) deriving (Eq, Show)
   data CaseValue = NOM | GEN | DAT | ACC | INS |
-    ABL | PARTC | LOC | VOC deriving (Show, Read)
+    ABL | PARTC | LOC | VOC deriving (Eq, Show, Read)
 
-  newtype Spf = Spf (Maybe SpfValue) deriving Show
-  data SpfValue = SG | PL deriving (Show, Read)
+  newtype Spf = Spf (Maybe SpfValue) deriving (Eq, Show)
+  data SpfValue = SG | PL deriving (Eq, Show, Read)
 
-  newtype RIVerb = RIVerb (Maybe RIVerbValue) deriving Show
-  data RIVerbValue = GER | INF | PARTCP | INDIC | IMPER deriving (Show, Read)
+  newtype RIVerb = RIVerb (Maybe RIVerbValue) deriving (Eq, Show)
+  data RIVerbValue = GER | INF | PARTCP | INDIC | IMPER deriving (Eq, Show, Read)
 
-  newtype FAdj = FAdj (Maybe FAdjValue) deriving Show
-  data FAdjValue = BREV | PLEN | POSS deriving (Show, Read)
+  newtype FAdj = FAdj (Maybe FAdjValue) deriving (Eq, Show)
+  data FAdjValue = BREV | PLEN | POSS deriving (Eq, Show, Read)
 
-  newtype DComp = DComp (Maybe DCompValue) deriving Show
-  data DCompValue = SUPR | COMP deriving (Show, Read)
+  newtype DComp = DComp (Maybe DCompValue) deriving (Eq, Show)
+  data DCompValue = SUPR | COMP deriving (Eq, Show, Read)
 
-  newtype PVerb = PVerb (Maybe PVerbValue) deriving Show
-  data PVerbValue = P1 | P2 | P3 deriving (Show, Read)
+  newtype PVerb = PVerb (Maybe PVerbValue) deriving (Eq, Show)
+  data PVerbValue = P1 | P2 | P3 deriving (Eq, Show, Read)
 
-  newtype GG = GG (Maybe GGValue) deriving Show
-  data GGValue = M | F | N deriving (Show, Read)
+  newtype GG = GG (Maybe GGValue) deriving (Eq, Show)
+  data GGValue = M | F | N deriving (Eq, Show, Read)
 
-  newtype VAspect = VAspect (Maybe VAspectValue) deriving Show
-  data VAspectValue = IPF | PF deriving (Show, Read)
+  newtype VAspect = VAspect (Maybe VAspectValue) deriving (Eq, Show)
+  data VAspectValue = IPF | PF deriving (Eq, Show, Read)
 
-  newtype APVoice = APVoice (Maybe APVoiceValue) deriving Show
-  data APVoiceValue = ACT | PASS deriving (Show, Read)
+  newtype APVoice = APVoice (Maybe APVoiceValue) deriving (Eq, Show)
+  data APVoiceValue = ACT | PASS deriving (Eq, Show, Read)
 
-  newtype IAN = IAN (Maybe IANValue) deriving Show
-  data IANValue = ANIM | INAN deriving (Show, Read)
+  newtype IAN = IAN (Maybe IANValue) deriving (Eq, Show)
+  data IANValue = ANIM | INAN deriving (Eq, Show, Read)
 
-  newtype TIVerb = TIVerb (Maybe TIVerbValue) deriving Show
-  data TIVerbValue = TRAN | INTR deriving (Show, Read)
+  newtype TIVerb = TIVerb (Maybe TIVerbValue) deriving (Eq, Show)
+  data TIVerbValue = TRAN | INTR deriving (Eq, Show, Read)
 
-  newtype OG = OG (Maybe OGValue) deriving Show
+  newtype OG = OG (Maybe OGValue) deriving (Eq, Show)
   data OGValue = PARENTH | GEO | AWKW | PERSN | DIST | MF | OBSC | PATRN |
-    PRAED | INFORM | RARE | ABBR | OBSOL | FAMN deriving (Show, Read)
+    PRAED | INFORM | RARE | ABBR | OBSOL | FAMN deriving (Eq, Show, Read)
 
   instance Default Grams where
     def = Grams (VerbsTime Nothing) (Case Nothing) (Spf Nothing) (RIVerb Nothing)
