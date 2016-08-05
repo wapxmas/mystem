@@ -85,9 +85,9 @@ module NLP.Mystem.Types where
   isNoun (MSRes _ (RWord _ (Pos (Just S)) _ _ : _)) = True
   isNoun _ = False
 
-  getRWord :: MSRes -> WordT
-  getRWord (MSRes _ (RWord rw _ _ _ : _)) = rw
-  getRWord _ = T.empty
+  getRWordRes :: MSRes -> WordT
+  getRWordRes (MSRes _ (RWord rw _ _ _ : _)) = rw
+  getRWordRes _ = T.empty
 
   class (Read a) => Grammeme a where
     readG :: String -> Maybe a
