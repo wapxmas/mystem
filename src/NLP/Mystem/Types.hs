@@ -79,6 +79,14 @@ module NLP.Mystem.Types where
   fill :: FillGramm a => a -> String -> a
   fill g = fillGramm g . map C.toUpper
 
+  isFamname :: MSRes -> Bool
+  isFamname (MSRes _ (RWord _ _ (Just (Grams _ _ _ _ _ _ _ _ _ _ _ _ (OG (Just FAMN)))) _ : _)) = True
+  isFamname _ = False
+
+  isNoun :: MSRes -> Bool
+  isNoun (MSRes _ (RWord _ (Pos (Just S)) _ _ : _)) = True
+  isNoun _ = False
+
   class (Read a) => Grammeme a where
     readG :: String -> Maybe a
     readG = readMaybe
