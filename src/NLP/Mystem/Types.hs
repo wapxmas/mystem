@@ -85,9 +85,9 @@ module NLP.Mystem.Types where
   isPersn (MSRes _ (RWord _ _ (Just (Grams _ _ _ _ _ _ _ _ _ _ _ _ (OG (Just PERSN)))) _ : _)) = True
   isPersn _ = False
 
-  isPartn :: MSRes -> Bool
-  isPartn (MSRes _ (RWord _ _ (Just (Grams _ _ _ _ _ _ _ _ _ _ _ _ (OG (Just PATRN)))) _ : _)) = True
-  isPartn _ = False
+  isPatrn :: MSRes -> Bool
+  isPatrn (MSRes _ (RWord _ _ (Just (Grams _ _ _ _ _ _ _ _ _ _ _ _ (OG (Just PATRN)))) _ : _)) = True
+  isPatrn _ = False
 
   isNoun :: MSRes -> Bool
   isNoun (MSRes _ (RWord _ (Pos (Just S)) _ _ : _)) = True
