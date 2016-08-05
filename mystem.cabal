@@ -1,5 +1,5 @@
 name:                mystem
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:            Bindings for Mystem morphological analyzer executabe
 description:         Bindings for Mystem morphological analyzer executabe
 homepage:            https://github.com/wapxmas/mystem#readme
