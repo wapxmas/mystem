@@ -2,11 +2,9 @@
 
 module NLP.Mystem.Types where
 
-  import           Control.Monad (forM_)
   import qualified Data.Char     as C
   import           Data.Default
   import qualified Data.Text     as T
-  import qualified Data.Text.IO  as TIO
   import           Text.Read
 
   type WordT = T.Text
@@ -86,6 +84,10 @@ module NLP.Mystem.Types where
   isNoun :: MSRes -> Bool
   isNoun (MSRes _ (RWord _ (Pos (Just S)) _ _ : _)) = True
   isNoun _ = False
+
+  getRWord :: MSRes -> WordT
+  getRWord (MSRes _ (RWord rw _ _ _ : _)) = rw
+  getRWord _ = T.empty
 
   class (Read a) => Grammeme a where
     readG :: String -> Maybe a
