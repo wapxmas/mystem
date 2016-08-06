@@ -52,7 +52,6 @@ module NLP.Mystem.IO where
         res <- flip (maybe (return T.empty)) i $ \hIn ->
                   flip (maybe (return T.empty)) o $ \hOut -> do
                     hSetEncoding hIn utf8
-                    hSetBuffering hIn NoBuffering
                     hSetEncoding hOut utf8
                     TIO.hPutStrLn hIn $ T.unlines stemWords
                     TIO.hGetContents hOut
