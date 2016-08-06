@@ -53,7 +53,7 @@ module NLP.Mystem.IO where
                   flip (maybe (return T.empty)) o $ \hOut -> do
                     hSetEncoding hIn utf8
                     hSetEncoding hOut utf8
-                    TIO.hPutStrLn hIn $ T.unlines stemWords
+                    forM_ stemWords $ TIO.hPutStrLn hIn
                     TIO.hGetContents hOut
         void $ waitForProcess ph
         return res
