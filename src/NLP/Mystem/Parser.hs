@@ -32,7 +32,7 @@ module NLP.Mystem.Parser where
       rPos <- getPos
       rGramm <- optional getGramm
       void (P.char '=' <?> "gramm end")
-      cs <- P.char '(' *> P.sepBy1 getGramm (P.char '|') <* P.char ')'
+      cs <- P.char '(' *> P.skipMany (P.char '|') *> P.sepBy1 getGramm (P.char '|') <* P.char ')'
               <|> flip (:) [] <$> getGramm
                 <|> pure []
       return $ RWord rw rPos rGramm cs
