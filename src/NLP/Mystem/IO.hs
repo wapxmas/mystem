@@ -29,7 +29,7 @@ module NLP.Mystem.IO where
 #ifdef Windows
   mystemExecutabe = "mystem.exe"
 #else
-  mystemExecutabe = "mystem.exe"
+  mystemExecutabe = "mystem"
 #endif
 
   mystemParams :: [String]
