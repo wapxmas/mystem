@@ -6,10 +6,8 @@ module NLP.Mystem.IO where
   import qualified Data.Text            as T
   import qualified Data.Text.IO         as TIO
   import           Control.Monad
-  import           System.Directory
   import           System.IO
   import           System.Process
-  import           Text.Printf
 
   import qualified NLP.Mystem.Parser        as MP
   import           NLP.Mystem.Types
@@ -44,16 +42,12 @@ module NLP.Mystem.IO where
 
   runMystem :: [T.Text] -> IO T.Text
   runMystem stemWords = do
-    exists <- doesFileExist mystemExecutabe
-    if not exists
-      then error $ printf "Mystem executable %s doesn`t exists." mystemExecutabe
-      else do
-        (i, o, _, ph) <- createProcess (proc mystemExecutabe mystemParams) { std_in = CreatePipe, std_out = CreatePipe }
-        res <- flip (maybe (return T.empty)) i $ \hIn ->
-                  flip (maybe (return T.empty)) o $ \hOut -> do
-                    hSetEncoding hIn utf8
-                    hSetEncoding hOut utf8
-                    forM_ stemWords $ TIO.hPutStrLn hIn
-                    TIO.hGetContents hOut
-        void $ waitForProcess ph
-        return res
+    (i, o, _, ph) <- createProcess (proc mystemExecutabe mystemParams) { std_in = CreatePipe, std_out = CreatePipe }
+    res <- flip (maybe (return T.empty)) i $ \hIn ->
+              flip (maybe (return T.empty)) o $ \hOut -> do
+                hSetEncoding hIn utf8
+                hSetEncoding hOut utf8
+                forM_ stemWords $ TIO.hPutStrLn hIn
+                TIO.hGetContents hOut
+    void $ waitForProcess ph
+    return res
